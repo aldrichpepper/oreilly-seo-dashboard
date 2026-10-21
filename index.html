@@ -41,7 +41,7 @@ body{background:#f1f5f9;color:#0f172a;font-family:-apple-system,BlinkMacSystemFo
 .kpi.amber::before{background:linear-gradient(90deg,#d97706,#f59e0b)}
 .kpi.rose::before{background:linear-gradient(90deg,#e11d48,#f43f5e)}
 .kpi-lbl{font-size:10px;color:#94a3b8;text-transform:uppercase;letter-spacing:.7px;margin-bottom:5px}
-.kpi-val{font-size:24px;font-weight:800;color:#0f172a;letter-spacing:-1px;line-height:1}
+.kpi-val{font-size:24px;font-weight:800;color:#0f172a;letter-spacing:-1px;line-height:1;cursor:help;border-bottom:1px dotted #cbd5e1;display:inline-block}
 .kpi-ch{font-size:11px;margin-top:5px;font-weight:600}
 .kpi-ch.up{color:#059669}.kpi-ch.dn{color:#e11d48}
 .kpi-wk{font-size:9px;color:#cbd5e1;margin-top:2px}
@@ -66,7 +66,7 @@ body{background:#f1f5f9;color:#0f172a;font-family:-apple-system,BlinkMacSystemFo
 .stat-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
 .stat-box{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px;text-align:center}
 .stat-box .lbl{font-size:10px;color:#94a3b8;text-transform:uppercase;letter-spacing:.6px;margin-bottom:4px}
-.stat-box .val{font-size:20px;font-weight:700;color:#1e293b}
+.stat-box .val{font-size:20px;font-weight:700;color:#1e293b;cursor:help;border-bottom:1px dotted #cbd5e1;display:inline-block}
 .stat-box .sub{font-size:10px;margin-top:3px;font-weight:600}
 .stat-box .sub.up{color:#059669}.stat-box .sub.dn{color:#e11d48}
 
@@ -100,7 +100,7 @@ select.si{width:140px}
 .mom-sum{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:16px}
 .mom-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px}
 .mom-card .m-lbl{font-size:10px;color:#94a3b8;margin-bottom:4px;text-transform:uppercase;letter-spacing:.6px}
-.mom-card .m-val{font-size:18px;font-weight:700;color:#1e293b}
+.mom-card .m-val{font-size:18px;font-weight:700;color:#1e293b;cursor:help;border-bottom:1px dotted #cbd5e1;display:inline-block}
 .mom-card .m-ch{font-size:11px;margin-top:3px;font-weight:600}
 .mom-card .m-ch.up{color:#059669}.mom-card .m-ch.dn{color:#e11d48}
 
@@ -325,6 +325,7 @@ const SEED = {
     {week:'21 Sep–27 Sep',clicks:85682, impr:10999918,bClicks:10826,bImpr:194193, nbClicks:74856,nbImpr:10805725},
     {week:'28 Sep–4 Oct', clicks:83632, impr:27064592,bClicks:11825,bImpr:182647, nbClicks:71807,nbImpr:26881945},
     {week:'5 Oct–11 Oct', clicks:87145, impr:18119094,bClicks:13828,bImpr:183459, nbClicks:73317,nbImpr:17935635},
+    {week:'12 Oct–18 Oct',clicks:81049, impr:5293656, bClicks:12759,bImpr:188239, nbClicks:68290,nbImpr:5105417},
   ],
   mom: [
     {month:"Mar'26",tClicks:541730,tImpr:50098180,bClicks:68403, bImpr:1112787, nbClicks:473327,nbImpr:48985393},
@@ -336,12 +337,12 @@ const SEED = {
     {month:"Sep'26",tClicks:393932,tImpr:41286329,bClicks:53150, bImpr:951684,  nbClicks:340782,nbImpr:40334645},
   ],
   pages: [
-    {url:'https://www.oreilly.com/',                                clicks:11136,impr:213173, pc:9323, pi:207150, cd:'19.4%↑',   id:'2.9%↑'},
-    {url:'https://www.oreilly.com/online-learning/teams.html',      clicks:8,    impr:213,    pc:9,    pi:288,    cd:'-11.1%↓',  id:'-26.0%↓'},
-    {url:'https://www.oreilly.com/online-learning/government.html', clicks:42,   impr:355,    pc:39,   pi:287,    cd:'7.7%↑',    id:'23.7%↑'},
-    {url:'https://www.oreilly.com/online-learning/academic.html',   clicks:107,  impr:3500,   pc:91,   pi:2518,   cd:'17.6%↑',   id:'39.0%↑'},
-    {url:'https://www.oreilly.com/online-learning/individuals.html',clicks:1,    impr:2,      pc:87,   pi:16452,  cd:'-98.9%↓',  id:'-100.0%↓'},
-    {url:'https://www.oreilly.com/content-marketing-solutions.html',clicks:1,    impr:7,      pc:0,    pi:0,      cd:'—',        id:'—'},
+    {url:'https://www.oreilly.com/',                                clicks:10397,impr:187440, pc:11136,pi:213173, cd:'-6.6%↓',   id:'-12.1%↓'},
+    {url:'https://www.oreilly.com/online-learning/teams.html',      clicks:6,    impr:179,    pc:8,    pi:213,    cd:'-25.0%↓',  id:'-16.0%↓'},
+    {url:'https://www.oreilly.com/online-learning/government.html', clicks:24,   impr:334,    pc:42,   pi:355,    cd:'-42.9%↓',  id:'-5.9%↓'},
+    {url:'https://www.oreilly.com/online-learning/academic.html',   clicks:108,  impr:4673,   pc:107,  pi:3500,   cd:'0.9%↑',    id:'33.5%↑'},
+    {url:'https://www.oreilly.com/online-learning/individuals.html',clicks:1,    impr:3,      pc:1,    pi:2,      cd:'0.0%↑',    id:'50.0%↑'},
+    {url:'https://www.oreilly.com/content-marketing-solutions.html',clicks:0,    impr:0,      pc:1,    pi:7,      cd:'-100.0%↓', id:'-100.0%↓'},
   ],
   kws: []
 };
@@ -556,17 +557,17 @@ function renderAll(){
 function renderKPIs(){
   const w=D.wow; if(!w.length)return;
   const lat=w[w.length-1], prev=w.length>1?w[w.length-2]:null;
-  const card=(lbl,val,chg,col)=>{
+  const card=(lbl,val,raw,chg,col)=>{
     const c=chg!==null?parseFloat(chg):null;
-    return`<div class="kpi ${col}"><div class="kpi-lbl">${lbl}</div><div class="kpi-val">${val}</div>${c!==null?`<div class="kpi-ch ${c>=0?'up':'dn'}">${c>=0?'↑':'↓'} ${Math.abs(c)}% WoW</div>`:''}<div class="kpi-wk">${lat.week}</div></div>`;
+    return`<div class="kpi ${col}"><div class="kpi-lbl">${lbl}</div><div class="kpi-val" title="${(+raw||0).toLocaleString()}">${val}</div>${c!==null?`<div class="kpi-ch ${c>=0?'up':'dn'}">${c>=0?'↑':'↓'} ${Math.abs(c)}% WoW</div>`:''}<div class="kpi-wk">${lat.week}</div></div>`;
   };
   document.getElementById('kpiGrid').innerHTML=[
-    card('Total Clicks',          fmt(lat.clicks),   prev?pct(lat.clicks,prev.clicks):null,    'blue'),
-    card('Total Impressions',     fmt(lat.impr),     prev?pct(lat.impr,prev.impr):null,        'rose'),
-    card('Brand Clicks',          fmt(lat.bClicks),  prev?pct(lat.bClicks,prev.bClicks):null,  'amber'),
-    card('Non-Brand Clicks',      fmt(lat.nbClicks), prev?pct(lat.nbClicks,prev.nbClicks):null,'green'),
-    card('Brand Impressions',     fmt(lat.bImpr),    prev?pct(lat.bImpr,prev.bImpr):null,      'blue'),
-    card('Non-Brand Impressions', fmt(lat.nbImpr),   prev?pct(lat.nbImpr,prev.nbImpr):null,    'rose'),
+    card('Total Clicks',          fmt(lat.clicks),   lat.clicks,   prev?pct(lat.clicks,prev.clicks):null,    'blue'),
+    card('Total Impressions',     fmt(lat.impr),     lat.impr,     prev?pct(lat.impr,prev.impr):null,        'rose'),
+    card('Brand Clicks',          fmt(lat.bClicks),  lat.bClicks,  prev?pct(lat.bClicks,prev.bClicks):null,  'amber'),
+    card('Non-Brand Clicks',      fmt(lat.nbClicks), lat.nbClicks, prev?pct(lat.nbClicks,prev.nbClicks):null,'green'),
+    card('Brand Impressions',     fmt(lat.bImpr),    lat.bImpr,    prev?pct(lat.bImpr,prev.bImpr):null,      'blue'),
+    card('Non-Brand Impressions', fmt(lat.nbImpr),   lat.nbImpr,   prev?pct(lat.nbImpr,prev.nbImpr):null,    'rose'),
   ].join('');
 }
 
@@ -578,9 +579,9 @@ function renderWowStats(){
   const ii=prev?pct(lat.impr,prev.impr):null;
   const nb=prev?pct(lat.nbClicks,prev.nbClicks):null;
   document.getElementById('wowStats').innerHTML=`
-    <div class="stat-box"><div class="lbl">Total Clicks (${lat.week})</div><div class="val">${fmt(lat.clicks)}</div><div class="sub ${c&&+c>=0?'up':'dn'}">${c?`${+c>=0?'↑':'↓'} ${Math.abs(+c)}% WoW`:''}</div></div>
-    <div class="stat-box"><div class="lbl">Total Impressions</div><div class="val">${fmt(lat.impr)}</div><div class="sub ${ii&&+ii>=0?'up':'dn'}">${ii?`${+ii>=0?'↑':'↓'} ${Math.abs(+ii)}% WoW`:''}</div></div>
-    <div class="stat-box"><div class="lbl">Non-Brand Clicks</div><div class="val">${fmt(lat.nbClicks)}</div><div class="sub ${nb&&+nb>=0?'up':'dn'}">${nb?`${+nb>=0?'↑':'↓'} ${Math.abs(+nb)}% WoW`:''}</div></div>`;
+    <div class="stat-box"><div class="lbl">Total Clicks (${lat.week})</div><div class="val" title="${(+lat.clicks||0).toLocaleString()}">${fmt(lat.clicks)}</div><div class="sub ${c&&+c>=0?'up':'dn'}">${c?`${+c>=0?'↑':'↓'} ${Math.abs(+c)}% WoW`:''}</div></div>
+    <div class="stat-box"><div class="lbl">Total Impressions</div><div class="val" title="${(+lat.impr||0).toLocaleString()}">${fmt(lat.impr)}</div><div class="sub ${ii&&+ii>=0?'up':'dn'}">${ii?`${+ii>=0?'↑':'↓'} ${Math.abs(+ii)}% WoW`:''}</div></div>
+    <div class="stat-box"><div class="lbl">Non-Brand Clicks</div><div class="val" title="${(+lat.nbClicks||0).toLocaleString()}">${fmt(lat.nbClicks)}</div><div class="sub ${nb&&+nb>=0?'up':'dn'}">${nb?`${+nb>=0?'↑':'↓'} ${Math.abs(+nb)}% WoW`:''}</div></div>`;
 }
 
 // ── WOW TABLE ─────────────────────────────────
@@ -608,8 +609,8 @@ function renderPageStats(){
   const totalI=D.pages.reduce((a,p)=>a+p.impr,0);
   const ups=D.pages.filter(p=>p.cd.includes('↑')).length;
   document.getElementById('pageStats').innerHTML=`
-    <div class="stat-box"><div class="lbl">Total Clicks (tracked pages)</div><div class="val">${fmt(totalC)}</div></div>
-    <div class="stat-box"><div class="lbl">Total Impressions</div><div class="val">${fmt(totalI)}</div></div>
+    <div class="stat-box"><div class="lbl">Total Clicks (tracked pages)</div><div class="val" title="${(+totalC||0).toLocaleString()}">${fmt(totalC)}</div></div>
+    <div class="stat-box"><div class="lbl">Total Impressions</div><div class="val" title="${(+totalI||0).toLocaleString()}">${fmt(totalI)}</div></div>
     <div class="stat-box"><div class="lbl">Pages Gaining Clicks</div><div class="val">${ups} / ${D.pages.length}</div></div>`;
 }
 
@@ -617,17 +618,17 @@ function renderPageStats(){
 function renderMomSummary(){
   const m=D.mom; if(!m.length)return;
   const lat=m[m.length-1],prev=m.length>1?m[m.length-2]:null;
-  const card=(lbl,val,chg)=>{
+  const card=(lbl,val,raw,chg)=>{
     const c=chg!==null?parseFloat(chg):null;
-    return`<div class="mom-card"><div class="m-lbl">${lbl}</div><div class="m-val">${val}</div>${c!==null?`<div class="m-ch ${c>=0?'up':'dn'}">${c>=0?'↑':'↓'} ${Math.abs(c)}% MoM</div>`:''}</div>`;
+    return`<div class="mom-card"><div class="m-lbl">${lbl}</div><div class="m-val" title="${(+raw||0).toLocaleString()}">${val}</div>${c!==null?`<div class="m-ch ${c>=0?'up':'dn'}">${c>=0?'↑':'↓'} ${Math.abs(c)}% MoM</div>`:''}</div>`;
   };
   document.getElementById('momSum').innerHTML=[
-    card('Total Clicks ('+lat.month+')',   fmt(lat.tClicks),  prev?pct(lat.tClicks,prev.tClicks):null),
-    card('Total Impressions',              fmt(lat.tImpr),    prev?pct(lat.tImpr,prev.tImpr):null),
-    card('Brand Clicks',                   fmt(lat.bClicks),  prev?pct(lat.bClicks,prev.bClicks):null),
-    card('Non-Brand Clicks',               fmt(lat.nbClicks), prev?pct(lat.nbClicks,prev.nbClicks):null),
-    card('Brand Impressions',              fmt(lat.bImpr),    prev?pct(lat.bImpr,prev.bImpr):null),
-    card('Non-Brand Impressions',          fmt(lat.nbImpr),   prev?pct(lat.nbImpr,prev.nbImpr):null),
+    card('Total Clicks ('+lat.month+')',   fmt(lat.tClicks),  lat.tClicks,  prev?pct(lat.tClicks,prev.tClicks):null),
+    card('Total Impressions',              fmt(lat.tImpr),    lat.tImpr,    prev?pct(lat.tImpr,prev.tImpr):null),
+    card('Brand Clicks',                   fmt(lat.bClicks),  lat.bClicks,  prev?pct(lat.bClicks,prev.bClicks):null),
+    card('Non-Brand Clicks',               fmt(lat.nbClicks), lat.nbClicks, prev?pct(lat.nbClicks,prev.nbClicks):null),
+    card('Brand Impressions',              fmt(lat.bImpr),    lat.bImpr,    prev?pct(lat.bImpr,prev.bImpr):null),
+    card('Non-Brand Impressions',          fmt(lat.nbImpr),   lat.nbImpr,   prev?pct(lat.nbImpr,prev.nbImpr):null),
   ].join('');
 }
 
